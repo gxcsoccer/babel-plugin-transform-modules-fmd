@@ -1,0 +1,60 @@
+{
+  "name": "babel-plugin-transform-modules-fmd",
+  "version": "1.0.0",
+  "description": "将 commonjs 和 es7 module 转换成 fmd 模式",
+  "main": "index.js",
+  "files": [
+    "lib",
+    "package.json",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rm -rf lib && babel src --out-dir lib --ignore __tests__",
+    "test": "babel-node node_modules/.bin/babel-istanbul cover node_modules/.bin/_mocha --no-timeouts",
+    "lint": "eslint --ext .js src",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gxcsoccer/babel-plugin-transform-modules-fmd.git"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "author": "gxcsoccer@126.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gxcsoccer/babel-plugin-transform-modules-fmd/issues"
+  },
+  "homepage": "https://github.com/gxcsoccer/babel-plugin-transform-modules-fmd#readme",
+  "dependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.7.4",
+    "babel-template": "^6.7.0",
+    "resolve": "^1.1.7"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.7.5",
+    "babel-core": "^6.7.5",
+    "babel-istanbul": "^0.7.0",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "eslint": "^2.7.0",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-react": "^4.3.0",
+    "mm": "^1.3.5",
+    "mocha": "^2.4.5",
+    "react": "^15.0.0",
+    "should": "^8.3.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ],
+    "plugins": [
+      "add-module-exports"
+    ]
+  }
+}
